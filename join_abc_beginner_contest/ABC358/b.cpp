@@ -1,39 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define rep(i, n) for (int i = 0; i < (n); i++)
 
 int main()
 {
-    string s;
-    cin >> s;
-    int uppercaseCount = 0;
-    int lowercaseCount = 0;
-    for (char c : s)
+    int n, cnt = 0;
+    cin >> n;
+    vector<int> a(2 * n, 0);
+    rep(i, 2 * n)
     {
-        if (isupper(c))
-        {
-            uppercaseCount++;
-        }
-        else if (islower(c))
-        {
-            lowercaseCount++;
-        }
-    }
-    string s2 = s;
-    if (uppercaseCount > lowercaseCount)
-    {
-        for (int i = 0; i < s.size(); i++)
-        {
-            s2[i] = toupper(s[i]);
-        }
-    }
-    else
-    {
-        for (int i = 0; i < s.size(); i++)
-        {
-            s2[i] = tolower(s[i]);
-        }
+        cin >> a[i];
     }
 
-    cout << s2 << endl;
+    rep(i, 2 * n - 2)
+    {
+        cnt += a[i] == a[i + 2];
+    }
+    cout << cnt << "\n";
+
     return 0;
 }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+// #define rep(i, n) for (int i = 0; i < (n); i++)
+
+// int main()
+// {
+//     int n, cnt = 0;
+//     cin >> n;
+//     vector<int> a(2 * n, 0);
+//     rep(i, 2 * n)
+//     {
+//         cin >> a[i];
+//     }
+
+//     rep(i, 2 * n - 2)
+//     {
+//         // pre = a[i];
+//         if (a[i] == a[i + 2])
+//         {
+//             cnt++;
+//         }
+//     }
+//     cout << cnt << "\n";
+
+//     return 0;
+// }

@@ -1,48 +1,38 @@
 #include <bits/stdc++.h>
-#define rep(i, n) for (int i = 0; i < (int)(n); ++i)
-#define rep3(i, m, n) for (int i = (m); i < (int)(n); ++i)
-#define repR(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
-#define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
-#define all(x) std::begin(x), std::end(x)
 using namespace std;
+#define rep(i, n) for (int i = 0; i < (n); i++)
+#define BIT_COUNT 8
 
 int main()
 {
-    int n, t, cnt = 0;
-    cin >> n >> t;
+    int n;
+    int m;
     string s;
-    cin >> s;
 
-    vector<pair<char, int>> sx(n);
+    cin >> n >> m;
+
+    vector<int> result(n, 0);
     rep(i, n)
     {
-        sx[i].first = s[i];
-        cin >> sx[i].second;
-    }
-
-    int ans = 0;
-    rep(i, n)
-    {
-        // '1'が見つかった場合、それと'1'以降にある'0'との距離の絶対値 ÷ 2 が t 以内であれば、ansを1増やす
-        if (sx[i].first == '1')
+        cin >> s;
+        for (char c : s)
         {
-            rep3(j, i, n - 1)
-            {
-                // '0'が見つかった場合
-                if (sx[j + 1].first == '0')
-                {
-                    // '1'と'0'との距離の絶対値 ÷ 2.0 が t 以内の場合
-                    if (abs(sx[i].second - sx[j + 1].second) / 2.0 <= t)
-                    {
-                        ans++;
-                        // cout << ans << endl;
-                    }
-                }
-            }
+            result[i] = (result[i] << 1) | (c == 'o' ? 1 : 0);
         }
     }
 
-    cout << ans << endl;
+    int sum = 0, ans = 0;
+    int expected = (1 << m) - 1;
+    rep(i, n)
+    {
+        if (sum == expected)
+            break;
+        sum |= result[i];
+        ans++;
+    }
+    bitset<BIT_COUNT> bits(ans);
+
+    cout << bits << endl;
 
     return 0;
 }

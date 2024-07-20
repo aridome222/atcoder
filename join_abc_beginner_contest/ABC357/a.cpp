@@ -1,34 +1,30 @@
+#include <bits/stdc++.h>
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
 int main()
 {
-    int n, l, r;
-
-    cin >> n >> l >> r;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++)
+    int N, M;
+    cin >> N >> M;
+    vector<int> H(N + 5, 0);
+    for (int i = 1; i <= N; i++)
     {
-        a[i] = i + 1;
+        cin >> H[i];
+    }
+    int ans = 0;
+    for (int i = 1; i <= N; i++)
+    {
+        if (M >= H[i])
+        {
+            M -= H[i];
+        }
+        else
+        {
+            break;
+        }
+        ans++;
     }
 
-    l -= 1;
-    r -= 1;
-
-    int cnt = 0;
-    for (int i = l; i <= r; i++)
-    {
-        a[i] = r - cnt + 1;
-        cnt++;
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        cout << a[i] << " ";
-    }
-    cout << endl;
-
+    cout << ans << endl;
     return 0;
 }

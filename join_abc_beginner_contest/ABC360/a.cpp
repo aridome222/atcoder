@@ -1,32 +1,33 @@
 #include <bits/stdc++.h>
+#define rep(i, n) for (int i = 0; i < (int)(n); ++i)
+#define rep3(i, m, n) for (int i = (m); i < (int)(n); ++i)
+#define repR(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
+#define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
+#define all(x) std::begin(x), std::end(x)
 using namespace std;
-#define rep(i, n) for (int i = 0; i < (n); i++)
 
 int main()
 {
-    int r_cnt = 0;
-    int m_cnt = 0;
-    string s;
-    cin >> s;
-
-    rep(i, s.size())
+    int k = 0;
+    int n = 0;
+    int x = 0;
+    cin >> n >> k >> x;
+    vector<int> a(n + 1);
+    rep(i, n + 1)
     {
-        if (s[i] == 'R')
-            r_cnt++;
-        if (s[i] == 'M')
-            m_cnt++;
-
-        if (r_cnt == 1 && m_cnt == 0)
+        if (i == k)
         {
-            cout << "Yes" << endl;
-            break;
+            a[i] = x;
+            continue;
         }
-        else if (r_cnt == 0 && m_cnt == 1)
-        {
-            cout << "No" << endl;
-            break;
-        }
+        cin >> a[i];
     }
+
+    rep(i, n + 1)
+    {
+        cout << a[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }

@@ -4,19 +4,29 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
+    int r_cnt = 0;
+    int m_cnt = 0;
     string s;
-    int cnt = 0;
+    cin >> s;
 
-    rep(i, n)
+    rep(i, s.size())
     {
-        cin >> s;
-        if (s == "Takahashi")
-            cnt++;
+        if (s[i] == 'R')
+            r_cnt++;
+        if (s[i] == 'M')
+            m_cnt++;
+
+        if (r_cnt == 1 && m_cnt == 0)
+        {
+            cout << "Yes" << endl;
+            break;
+        }
+        else if (r_cnt == 0 && m_cnt == 1)
+        {
+            cout << "No" << endl;
+            break;
+        }
     }
-    cout << cnt << endl;
-    ;
 
     return 0;
 }

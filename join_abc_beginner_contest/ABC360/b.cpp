@@ -1,34 +1,40 @@
 #include <bits/stdc++.h>
+#define rep(i, n) for (int i = 0; i < (int)(n); ++i)
+#define rep3(i, m, n) for (int i = (m); i < (int)(n); ++i)
+#define repR(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
+#define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
+#define all(x) std::begin(x), std::end(x)
 using namespace std;
-#define rep(i, n) for (int i = 0; i < (n); i++)
+
+struct Point
+{
+    int x;
+    int y;
+    int z;
+};
+Point input()
+{
+    Point p;
+    cin >> p.x >> p.y >> p.z;
+    return p;
+}
 
 int main()
 {
-    string s, t;
-    cin >> s >> t;
-    int n = s.size();
+    Point l1 = input();
+    Point r1 = input();
+    Point l2 = input();
+    Point r2 = input();
 
-    // w文字ごとに区切る
-    for (int w = 1; w < n; w++)
+    if (((l1.x <= l2.x && l2.x < r1.x) && (l1.y <= l2.y && l2.y < r1.y) && (l1.z <= l2.z && l2.z < r1.z)) ||
+        ((l1.x < r2.x && r2.x <= r1.x) && (l1.y < r2.y && r2.y <= r1.y) && (l1.z < r2.z && r2.z <= r1.z)))
     {
-        // c列目を連結させた文字列を作る
-        for (int c = 0; c < w; c++)
-        {
-            string ans = "";
-            for (int i = c; i < n; i += w)
-            {
-                ans += s[i];
-            }
-
-            if (t == ans)
-            {
-                cout << "Yes" << endl;
-                return 0;
-            }
-        }
+        cout << "Yes" << endl;
     }
-
-    cout << "No" << endl;
+    else
+    {
+        cout << "No" << endl;
+    }
 
     return 0;
 }

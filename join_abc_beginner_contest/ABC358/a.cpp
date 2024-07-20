@@ -1,30 +1,22 @@
 #include <bits/stdc++.h>
-#include <iostream>
 using namespace std;
+#define rep(i, n) for (int i = 0; i < (n); i++)
 
 int main()
 {
-    int N, M;
-    cin >> N >> M;
-    vector<int> H(N + 5, 0);
-    for (int i = 1; i <= N; i++)
-    {
-        cin >> H[i];
-    }
-    int ans = 0;
-    for (int i = 1; i <= N; i++)
-    {
-        if (M >= H[i])
-        {
-            M -= H[i];
-        }
-        else
-        {
-            break;
-        }
-        ans++;
-    }
+    int n;
+    cin >> n;
+    string s;
+    int cnt = 0;
 
-    cout << ans << endl;
+    rep(i, n)
+    {
+        cin >> s;
+        if (s == "Takahashi")
+            cnt++;
+    }
+    cout << cnt << endl;
+    ;
+
     return 0;
 }

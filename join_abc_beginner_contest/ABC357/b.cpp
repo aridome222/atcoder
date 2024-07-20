@@ -1,49 +1,39 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    int n, m;
-
-    cin >> n >> m;
-    vector<int> a(m);
-    for (int i = 0; i < m; i++)
+    string s;
+    cin >> s;
+    int uppercaseCount = 0;
+    int lowercaseCount = 0;
+    for (char c : s)
     {
-        cin >> a[i];
-    }
-    vector<vector<int>> x(n, vector<int>(m));
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
+        if (isupper(c))
         {
-            cin >> x[i][j];
+            uppercaseCount++;
+        }
+        else if (islower(c))
+        {
+            lowercaseCount++;
         }
     }
-
-    vector<int> sum(m, 0);
-    bool flag = true;
-    for (int j = 0; j < m; j++)
+    string s2 = s;
+    if (uppercaseCount > lowercaseCount)
     {
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < s.size(); i++)
         {
-            sum[j] += x[i][j];
+            s2[i] = toupper(s[i]);
         }
-        if (sum[j] < a[j])
-        {
-            flag = false;
-        }
-    }
-
-    if (flag)
-    {
-        cout << "Yes" << endl;
     }
     else
     {
-        cout << "No" << endl;
+        for (int i = 0; i < s.size(); i++)
+        {
+            s2[i] = tolower(s[i]);
+        }
     }
 
+    cout << s2 << endl;
     return 0;
 }

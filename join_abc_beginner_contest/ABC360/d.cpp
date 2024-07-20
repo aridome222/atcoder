@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
-using namespace std;
-#define rep(i, n) for (int i = 0; i < (n); i++)
-#define rrep(i, a, n) for (int i = (a); i < (n); i++)
-
+#define rep(i, n) for (int i = 0; i < (int)(n); ++i)
+#define rep3(i, m, n) for (int i = (m); i < (int)(n); ++i)
+#define repR(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
+#define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
+#define all(x) std::begin(x), std::end(x)
 using namespace std;
 
 int main()
@@ -25,7 +26,7 @@ int main()
         // '1'が見つかった場合、それと'1'以降にある'0'との距離の絶対値 ÷ 2 が t 以内であれば、ansを1増やす
         if (sx[i].first == '1')
         {
-            rrep(j, i, n - 1)
+            rep3(j, i, n - 1)
             {
                 // '0'が見つかった場合
                 if (sx[j + 1].first == '0')

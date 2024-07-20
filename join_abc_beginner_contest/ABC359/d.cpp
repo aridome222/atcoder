@@ -1,29 +1,47 @@
-#include <iostream>
-#include <cmath>
-#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i, n) for (int i = 0; i < (n); i++)
+#define rrep(i, a, n) for (int i = (a); i < (n); i++)
 
 using namespace std;
 
 int main()
 {
-    long Sx, Sy, Tx, Ty;
-    cin >> Sx >> Sy >> Tx >> Ty;
+    int n, t, cnt = 0;
+    cin >> n >> t;
+    string s;
+    cin >> s;
 
-    // タイルの左側に寄せておく
-    if ((Sx + Sy) % 2 == 1)
+    vector<pair<char, int>> sx(n);
+    rep(i, n)
     {
-        --Sx;
+        sx[i].first = s[i];
+        cin >> sx[i].second;
     }
-    if ((Tx + Ty) % 2 == 1)
+
+    int ans = 0;
+    rep(i, n)
     {
-        --Tx;
+        // '1'が見つかった場合、それと'1'以降にある'0'との距離の絶対値 ÷ 2 が t 以内であれば、ansを1増やす
+        if (sx[i].first == '1')
+        {
+            rrep(j, i, n - 1)
+            {
+                // '0'が見つかった場合
+                if (sx[j + 1].first == '0')
+                {
+                    // '1'と'0'との距離の絶対値 ÷ 2.0 が t 以内の場合
+                    if (abs(sx[i].second - sx[j + 1].second) / 2.0 <= t)
+                    {
+                        ans++;
+                        // cout << ans << endl;
+                    }
+                }
+            }
+        }
     }
 
-    // 答えは (|Sy - Ty| + max(|Sx - Tx|, |Sy - Ty|)) / 2
-    long Dx = abs(Sx - Tx);
-    long Dy = abs(Sy - Ty);
-    cout << Dx << Dy << endl;
+    cout << ans << endl;
 
-    cout << (Dy + max(Dx, Dy)) / 2 << endl;
     return 0;
 }
