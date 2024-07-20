@@ -5,50 +5,20 @@ using namespace std;
 #define repR(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
 #define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
 #define all(x) std::begin(x), std::end(x)
+#define mprint(msg) cout << msg << endl;
 
 int main()
 {
-    int r = 0;
-    int g = 0;
-    int b = 0;
-    cin >> r >> g >> b;
-    string c;
-    cin >> c;
-    int ans = 0;
-
-    if (c == "Red")
+    int a, b;
+    cin >> a >> b;
+    int c = a * b;
+    if (c % 2 == 0)
     {
-        if (g < b)
-        {
-            cout << g << endl;
-        }
-        else
-        {
-            cout << b << endl;
-        }
+        mprint("Even");
     }
-    else if (c == "Green")
+    else
     {
-        if (r < b)
-        {
-            cout << r << endl;
-        }
-        else
-        {
-            cout << b << endl;
-        }
+        mprint("Odd");
     }
-    else if (c == "Blue")
-    {
-        if (r < g)
-        {
-            cout << r << endl;
-        }
-        else
-        {
-            cout << g << endl;
-        }
-    }
-
     return 0;
 }

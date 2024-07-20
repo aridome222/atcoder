@@ -30,6 +30,21 @@ using namespace std;
 #define repR(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
 #define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
 #define all(x) std::begin(x), std::end(x)
+#define mPrint(msg) cout << msg << endl;
+#define dprint(msg) cout << "-----\n" \
+                         << msg << "\n-----\n";
+#define arrPrint(arr)                \
+    {                                \
+        bool first = true;           \
+        for (const auto &elem : arr) \
+        {                            \
+            if (!first)              \
+                cout << " ";         \
+            cout << elem;            \
+            first = false;           \
+        }                            \
+        cout << endl;                \
+    }
 
 int main()
 {
