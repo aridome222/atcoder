@@ -31,7 +31,7 @@ using namespace std;
 #define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
 #define all(x) std::begin(x), std::end(x)
 #define mPrint(msg) cout << msg << endl;
-#define dprint(msg) cout << "-----\n" \
+#define dPrint(msg) cout << "-----\n" \
                          << msg << "\n-----\n";
 #define arrPrint(arr)                \
     {                                \
