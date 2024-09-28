@@ -30,6 +30,7 @@ using namespace std;
 #define repR(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
 #define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
 #define all(x) std::begin(x), std::end(x)
+#define rAll(x) std::rbegin(x), std::rend(x)
 #define mPrint(msg) cout << msg << endl;
 #define dPrint(msg) cout << "-----\n" \
                          << msg << "\n-----\n";
