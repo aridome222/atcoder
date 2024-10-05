@@ -7,6 +7,9 @@
     "string_view": "cpp",
     "vector": "cpp",
     "ostream": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "functional": "cpp",
+    "cmath": "cpp",
+    "complex": "cpp"
   }
 }
