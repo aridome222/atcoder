@@ -42,14 +42,14 @@ inline bool chmin(T &a, T b)
     return false;
 }
 
-using pi = pair<int, int>;
+using pi = pair<long double, long double>;
 long double dist(pi l, pi r)
 {
-    long long v = 0;
-    v += (l.first - r.first) * (l.first - r.first);
-    v += (l.second - r.second) * (l.second - r.second);
-    dPrint(v);
-    return sqrtl(((long double)v));
+    long double v = 0;
+    v += (long double)((l.first - r.first) * (l.first - r.first));
+    v += (long double)((l.second - r.second) * (l.second - r.second));
+    dPrint(sqrt(((long double)v)));
+    return sqrt(((long double)v));
 }
 
 int main()
@@ -64,6 +64,7 @@ int main()
 
     pi cur = make_pair(0, 0);
     long double v = dist(cur, xy[0]);
+
     rep(i, n - 1)
     {
         v += dist(xy[i], xy[i + 1]);

@@ -44,7 +44,44 @@ inline bool chmin(T &a, T b)
 
 int main()
 {
+    int n;
+    cin >> n;
+    char a[n][n];
+    char b[n][n];
+    rep(i, n)
+    {
+        rep(j, n)
+        {
+            cin >> a[i][j];
+        }
+    }
 
+    rep(i, n / 2)
+    {
+        rep3(j, i, n - i)
+        {
+            rep3(k, i, n - i)
+            {
+                b[j][n - k - 1] = a[k][j];
+            }
+        }
 
+        rep(i, n)
+        {
+            rep(j, n)
+            {
+                a[i][j] = b[i][j];
+            }
+        }
+    }
+
+    rep(i, n)
+    {
+        rep(j, n)
+        {
+            cout << b[i][j];
+        }
+        cout << endl;
+    }
     return 0;
 }
