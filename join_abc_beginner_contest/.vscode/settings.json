@@ -11,5 +11,6 @@
     "functional": "cpp",
     "cmath": "cpp",
     "complex": "cpp"
-  }
+  },
+  "makefile.configureOnOpen": false
 }
