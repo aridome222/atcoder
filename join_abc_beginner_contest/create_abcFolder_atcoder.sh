@@ -31,6 +31,7 @@ using namespace std;
 #define rep3R(i, m, n) for (int i = (int)(n) - 1; i >= (int)(m); --i)
 #define all(x) std::begin(x), std::end(x)
 #define rAll(x) std::rbegin(x), std::rend(x)
+#define contain(str, ch) (str.find(ch) != string::npos)
 #define mPrint(msg) cout << msg << endl;
 #define dPrint(msg) cout << "-----\n" \
                          << msg << "\n-----\n";
