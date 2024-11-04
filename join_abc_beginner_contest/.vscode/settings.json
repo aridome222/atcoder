@@ -10,7 +10,8 @@
     "random": "cpp",
     "functional": "cpp",
     "cmath": "cpp",
-    "complex": "cpp"
+    "complex": "cpp",
+    "deque": "cpp"
   },
   "makefile.configureOnOpen": false
 }
