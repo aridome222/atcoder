@@ -25,8 +25,10 @@ echo "Created folder: $next_folder"
 # テンプレート内容
 template='#include <bits/stdc++.h>
 using namespace std;
-#define INF 1000000000
-#define ll long long
+using ll = long long;
+const int INF = 1e9;
+const int MOD = 1e9+7;
+const ll LINF = 1e18;
 #define rep(i, n) for (int i = 0; i < (int)(n); ++i)
 #define rep3(i, m, n) for (int i = (m); i < (int)(n); ++i)
 #define repR(i, n) for (int i = (int)(n) - 1; i >= 0; --i)
@@ -35,8 +37,6 @@ using namespace std;
 #define rAll(x) std::rbegin(x), std::rend(x)
 #define contain(str, ch) (str.find(ch) != string::npos)
 #define mPrint(msg) cout << msg << endl;
-#define dPrint(msg) cout << "-----\n" \
-                         << msg << "\n-----\n";
 #define arrPrint(arr)                \
     {                                \
         bool first = true;           \
@@ -49,6 +49,7 @@ using namespace std;
         }                            \
         cout << endl;                \
     }
+#define dump(x)  cout << #x << " = " << (x) << endl;
 template <class T>
 inline bool chmax(T &a, T b)
 {
