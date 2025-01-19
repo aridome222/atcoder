@@ -70,27 +70,26 @@ inline bool chmin(T &a, T b)
     }
     return false;
 }
-// 二分探索
-/*
-vector<int> a = {1, 14, 32, 51, 51, 51, 243, 419, 750, 910};
-bool isOK(int index, int key) {
+template <class T>
+bool isOK(const vector<T>& a, size_t index, T key) {
     if (a[index] >= key) return true;
     else return false;
 }
-int binary_search(int key) {
-    long long left = -1;
-    long long right = (int)a.size();
+template <class T>
+int binary_search(const vector<T>& a, T key) {
+    size_t left = 0;
+    size_t right = a.size();
 
     while (right - left > 1) {
-        long long mid = left + (right - left) / 2;
+        size_t mid = left + (right - left) / 2;
 
-        if (isOK(mid, key)) right = mid;
+        if (isOK(a, mid, key)) right = mid;
         else left = mid;
     }
 
     return right;
 }
-*/
+
 
 int main()
 {
