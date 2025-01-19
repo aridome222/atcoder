@@ -86,6 +86,9 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "__hash_table": "cpp"
+        "__hash_table": "cpp",
+        "__bit_reference": "cpp",
+        "__split_buffer": "cpp",
+        "queue": "cpp"
     }
 }
