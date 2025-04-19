@@ -11,7 +11,8 @@
     "functional": "cpp",
     "cmath": "cpp",
     "complex": "cpp",
-    "deque": "cpp"
+    "deque": "cpp",
+    "initializer_list": "cpp"
   },
   "makefile.configureOnOpen": false
 }
