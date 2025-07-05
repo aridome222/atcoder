@@ -12,7 +12,8 @@
     "cmath": "cpp",
     "complex": "cpp",
     "deque": "cpp",
-    "initializer_list": "cpp"
+    "initializer_list": "cpp",
+    "iosfwd": "cpp"
   },
   "makefile.configureOnOpen": false
 }
