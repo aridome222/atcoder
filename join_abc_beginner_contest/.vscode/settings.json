@@ -1,19 +1,27 @@
 {
-  "files.associations": {
-    "iostream": "cpp",
-    "__split_buffer": "cpp",
-    "array": "cpp",
-    "string": "cpp",
-    "string_view": "cpp",
-    "vector": "cpp",
-    "ostream": "cpp",
-    "random": "cpp",
-    "functional": "cpp",
-    "cmath": "cpp",
-    "complex": "cpp",
-    "deque": "cpp",
-    "initializer_list": "cpp",
-    "iosfwd": "cpp"
-  },
-  "makefile.configureOnOpen": false
+	"files.associations": {
+		".fantomasignore": "ignore",
+		"iostream": "cpp",
+		"__split_buffer": "cpp",
+		"array": "cpp",
+		"string": "cpp",
+		"string_view": "cpp",
+		"vector": "cpp",
+		"ostream": "cpp",
+		"random": "cpp",
+		"functional": "cpp",
+		"cmath": "cpp",
+		"complex": "cpp",
+		"deque": "cpp",
+		"initializer_list": "cpp",
+		"iosfwd": "cpp",
+		"sstream": "cpp",
+		"__bit_reference": "cpp",
+		"__hash_table": "cpp",
+		"unordered_map": "cpp",
+		"bitset": "cpp",
+		"queue": "cpp",
+		"stack": "cpp"
+	},
+	"makefile.configureOnOpen": false
 }
