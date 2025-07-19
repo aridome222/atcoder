@@ -21,7 +21,8 @@
 		"unordered_map": "cpp",
 		"bitset": "cpp",
 		"queue": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"__locale": "cpp"
 	},
 	"makefile.configureOnOpen": false
 }
