@@ -95,10 +95,37 @@ int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
+
+    // cout << fixed << setprecision(17);
     
 
     return 0;
 }'
+
+# Makefileのテンプレート内容
+makefile_template='# Makefile
+
+CXX      := g++-15
+CXXFLAGS := -std=c++20 -O2 -Wall -Wextra -Wpedantic
+TARGET   := a.out
+
+.PHONY: clean
+
+# ビルドターゲット
+# 例: make build b → b.cpp をコンパイル
+build:
+ifeq ($(words $(MAKECMDGOALS)),1)
+	$(error ファイルを指定してください: make build <a|b|c|d>)
+endif
+	$(CXX) $(CXXFLAGS) $(word 2,$(MAKECMDGOALS)).cpp -o $(TARGET)
+
+# 実行
+run:
+	./$(TARGET)
+
+# クリーン
+clean:
+	rm -f $(TARGET)'
 
 # 作成したフォルダ内に移動
 cd "$next_folder" || exit
@@ -113,3 +140,12 @@ for filename in $files; do
   # ファイル作成成功のメッセージ
   echo "$filename.cpp has been created."
 done
+
+# Makefileを作成
+echo "$makefile_template" > "Makefile"
+echo "Makefile has been created."
+
+# 作成したフォルダのフルパスを表示
+echo "All files created in: $(pwd)"
+echo "Directory is ready for AtCoder contest!"
+echo "You are now in the $next_folder directory."
